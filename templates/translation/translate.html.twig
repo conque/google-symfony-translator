@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Translate</title>
+</head>
+<body>
+<form action="{{ path('app_translation') }}" method="post">
+    <label for="text">Text:</label>
+    <input type="text" id="text" name="text" required>
+
+    <label for="sourceLanguage">Source Language:</label>
+    <input type="text" id="sourceLanguage" name="sourceLanguage" value="en">
+
+    <label for="targetLanguage">Target Language:</label>
+    <input type="text" id="targetLanguage" name="targetLanguage" required>
+
+    <button type="submit">Translate</button>
+</form>
+
+{% if translatedText is defined %}
+    <p>Translated Text: {{ translatedText }}</p>
+{% endif %}
+</body>
+</html>
